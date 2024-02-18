@@ -1,12 +1,12 @@
 const express=require('express');
 const app=express();
-
+const cors = require('cors');
 
 //load config file from env
 require('dotenv').config();
 const PORT=process.env.PORT||4000
 
-
+app.use(cors());
 //middelware to parse json
 app.use(express.json());
 
