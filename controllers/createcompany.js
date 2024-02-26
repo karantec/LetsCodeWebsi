@@ -6,11 +6,11 @@ const Company=require('../models/Remote');
  exports.createJob=async(req,res)=>{
     try{
         //extract title and description from req.body
-        const {CompanyName,JobType, Location,Roles, Skills,Experience,ApplyLink}=req.body;
+        const {CompanyName,JobType, ExpectedSalary,Roles, Skills,Experience,ApplyLink}=req.body;
         const existingCompany = await Company.findOne({
             CompanyName: CompanyName,
             JobType: JobType,
-            Location: Location,
+            ExpectedSalary: ExpectedSalary,
             Roles: Roles,
             Skills: Skills,
             Experience: Experience,
@@ -25,7 +25,7 @@ const Company=require('../models/Remote');
             });
         }
 
-        if (!CompanyName || !JobType || !Location || !Roles || !Skills || !Experience || !ApplyLink) {
+        if (!CompanyName || !JobType || !ExpectedSalary || !Roles || !Skills || !Experience || !ApplyLink) {
             return res.status(400).json({
                 success: false,
                 data: "Bad Request",
@@ -35,7 +35,7 @@ const Company=require('../models/Remote');
         
         //create a new Company
         const response=await Company.create({
-            CompanyName,JobType, Location,Roles, Skills,Experience,ApplyLink
+            CompanyName,JobType, ExpectedSalary,Roles, Skills,Experience,ApplyLink
         
         });
         //send newly created todo back as response

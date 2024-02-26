@@ -5,7 +5,7 @@ exports.updateCompany=async(req,res)=>{
       const {id,Location}=req.params;
         const {CompanyName,JobType,Roles, Skills,Experience}=req.body;
         const response=await Company.findByIdAndUpdate({_id:id},
-            {CompanyName,JobType, Location,Roles, Skills,Experience,updatedAt:Date.now()},);
+            {CompanyName,JobType, ExpectedSalary,Roles, Skills,Experience,updatedAt:Date.now()},);
        
         return res.status(200).json({
             success:true,
