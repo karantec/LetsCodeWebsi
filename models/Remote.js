@@ -10,6 +10,11 @@ const CompanySchema = new mongoose.Schema(
             type:String,
             required:true,
         },
+        description: {
+            type:String,
+            required:true,
+        },  
+        
         ExpectedSalary: {
             type:String,
             required:true,
