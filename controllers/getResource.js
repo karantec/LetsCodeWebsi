@@ -1,12 +1,12 @@
-const Company = require("../models/Remote");
+const Resource=require('../models/Remote');
 
-exports.getCompany=async(req,res)=>{
+exports.getResource=async(req,res)=>{
     try{    
-        const todos=await Company.find({});
+        const Resources=await Resource.find({});
         res.status(200).json({
             success:true,
-            data:todos,
-            message:"Entire Company data Fetched Successfully"
+            data:Resources,
+            message:"Resoures Company data Fetched Successfully"
         });
     }catch(error){
         console.log(error);

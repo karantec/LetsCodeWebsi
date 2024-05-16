@@ -12,9 +12,9 @@ app.use(express.json());
 
  //import routes  from todo api
 
-const CompanyRoutes=require("./routes/Company");
+const ResourceRoutes=require("./routes/Resource");
 
-app.use('/api/v1', CompanyRoutes);
+app.use('/api/v1', ResourceRoutes);
 
 //default route
 app.get('/',(req,res)=>{

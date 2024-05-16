@@ -1,41 +1,17 @@
 const mongoose = require("mongoose");
 
-const CompanySchema = new mongoose.Schema(
+const  ResourceSchema = new mongoose.Schema(
     {
-        CompanyName:{
+      
+        Title:{
             type:String,
             required:true,
         },
-        JobType: {
+        Link: {
             type:String,
             required:true,
         },
-        description: {
-            type:String,
-            required:true,
-        },  
         
-        ExpectedSalary: {
-            type:String,
-            required:true,
-        },
-        Roles: {
-            type:String,
-            required:true,
-        },
-        Skills:{
-            type:String, 
-            required:true,
-        },
-        Experience:{
-            type:String,
-            required:true,
-        },
-        ApplyLink:{
-            type:String,
-            required:true,
-        
-        },
        
         createdAt:{
             type:Date,
@@ -49,4 +25,4 @@ const CompanySchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Company", CompanySchema);
+module.exports = mongoose.model("Resource", ResourceSchema);
